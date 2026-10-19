@@ -1,84 +1,60 @@
+using WeatherApp;
+using WeatherApp.Models;
+using WeatherApp.Services;
+
 var builder = WebApplication.CreateBuilder(args);
+
+// pick live or sample data
+string weatherSource = builder.Configuration["WeatherSource"] ?? "Bom";
+
+if (weatherSource.Equals("Mock", StringComparison.OrdinalIgnoreCase))
+{
+    builder.Services.AddSingleton<IWeatherService, MockWeatherService>();
+}
+else
+{
+    builder.Services.AddHttpClient<IWeatherService, BomWeatherService>(httpClient =>
+    {
+        httpClient.BaseAddress = new Uri("https://api.weather.bom.gov.au/v1/");
+        httpClient.Timeout = TimeSpan.FromSeconds(10);
+        httpClient.DefaultRequestHeaders.UserAgent.ParseAdd("WeatherDashboard-StudentProject/1.0");
+    });
+}
+
+builder.Services.AddSingleton<WeatherDashboard>();
 
 var app = builder.Build();
 
-string homePage = """
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8">
-    <title>Weather Dashboard</title>
+// log each forecast
+var dashboard = app.Services.GetRequiredService<WeatherDashboard>();
+dashboard.ForecastLoaded += (sender, eventDetails) =>
+    Console.WriteLine($"[forecast loaded] {eventDetails.Location.DisplayName} {eventDetails.Date:yyyy-MM-dd} " +
+                      $"from {eventDetails.Source} in {eventDetails.Milliseconds} ms");
 
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background: #eaf3fb;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            margin: 0;
-        }
+// main page
+app.MapGet("/", async (string? suburb, DateOnly? date, WeatherDashboard weatherDashboard) =>
+{
+    string html = await weatherDashboard.ShowForecastAsync(suburb, date);
+    return Results.Content(html, "text/html; charset=utf-8");
+});
 
-        .card {
-            background: white;
-            padding: 30px 40px;
-            border-radius: 12px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-            text-align: center;
-            width: 320px;
-        }
+// forecast as JSON
+app.MapGet("/api/forecast", async (string? suburb, DateOnly? date, WeatherDashboard weatherDashboard, IWeatherService weatherService) =>
+{
+    try
+    {
+        LocationSearchOutcome searchOutcome = await weatherDashboard.FindLocationAsync(suburb);
+        Location place = searchOutcome.ChosenLocation;
+        DateOnly forecastDate = date ?? WeatherDashboard.TodayAt(place);
+        return Results.Ok(await weatherService.GetForecastAsync(place, forecastDate));
+    }
+    catch (WeatherServiceException exception)
+    {
+        return Results.Problem(exception.Message, statusCode: 502);
+    }
+});
 
-        h1 {
-            font-size: 24px;
-            color: #333;
-            margin-top: 0;
-        }
-
-        .temperature {
-            font-size: 36px;
-            font-weight: bold;
-            color: #1e6fbf;
-            margin: 15px 0;
-        }
-
-        .details {
-            color: #555;
-            font-size: 14px;
-            line-height: 1.8;
-        }
-
-        .note {
-            color: #777;
-            font-size: 12px;
-            margin-top: 20px;
-        }
-    </style>
-</head>
-
-<body>
-
-    <div class="card">
-
-        <h1>Weather Dashboard</h1>
-
-        <div class="temperature">25°C</div>
-
-        <p>Hello Pramod, today is sunny in Perth.</p>
-
-        <div class="details">
-            Minimum Temperature: 15°C<br>
-            Maximum Temperature: 25°C<br>
-            Humidity: 40%<br>
-            Rainfall: 0 mm
-        </div>
-
-    </div>
-
-</body>
-</html>
-""";
-
-app.MapGet("/", () => Results.Content(homePage, "text/html"));
+// language tests
+app.MapGet("/lab", () => Results.Text(LanguageLab.Run(), "text/plain; charset=utf-8"));
 
 app.Run();

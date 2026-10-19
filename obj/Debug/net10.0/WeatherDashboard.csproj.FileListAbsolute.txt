@@ -1,3 +1,31 @@
+C:\Users\user\Downloads\1\WeatherDashboard\bin\Debug\net10.0\appsettings.Development.json
+C:\Users\user\Downloads\1\WeatherDashboard\bin\Debug\net10.0\appsettings.json
+C:\Users\user\Downloads\1\WeatherDashboard\bin\Debug\net10.0\WeatherDashboard.staticwebassets.endpoints.json
+C:\Users\user\Downloads\1\WeatherDashboard\bin\Debug\net10.0\WeatherDashboard.exe
+C:\Users\user\Downloads\1\WeatherDashboard\bin\Debug\net10.0\WeatherDashboard.deps.json
+C:\Users\user\Downloads\1\WeatherDashboard\bin\Debug\net10.0\WeatherDashboard.runtimeconfig.json
+C:\Users\user\Downloads\1\WeatherDashboard\bin\Debug\net10.0\WeatherDashboard.dll
+C:\Users\user\Downloads\1\WeatherDashboard\bin\Debug\net10.0\WeatherDashboard.pdb
+C:\Users\user\Downloads\1\WeatherDashboard\obj\Debug\net10.0\rpswa.dswa.cache.json
+C:\Users\user\Downloads\1\WeatherDashboard\obj\Debug\net10.0\WeatherDashboard.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\user\Downloads\1\WeatherDashboard\obj\Debug\net10.0\WeatherDashboard.AssemblyInfoInputs.cache
+C:\Users\user\Downloads\1\WeatherDashboard\obj\Debug\net10.0\WeatherDashboard.AssemblyInfo.cs
+C:\Users\user\Downloads\1\WeatherDashboard\obj\Debug\net10.0\WeatherDashboard.csproj.CoreCompileInputs.cache
+C:\Users\user\Downloads\1\WeatherDashboard\obj\Debug\net10.0\WeatherDashboard.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\user\Downloads\1\WeatherDashboard\obj\Debug\net10.0\rjimswa.dswa.cache.json
+C:\Users\user\Downloads\1\WeatherDashboard\obj\Debug\net10.0\rjsmrazor.dswa.cache.json
+C:\Users\user\Downloads\1\WeatherDashboard\obj\Debug\net10.0\rjsmcshtml.dswa.cache.json
+C:\Users\user\Downloads\1\WeatherDashboard\obj\Debug\net10.0\scopedcss\bundle\WeatherDashboard.styles.css
+C:\Users\user\Downloads\1\WeatherDashboard\obj\Debug\net10.0\staticwebassets.build.json
+C:\Users\user\Downloads\1\WeatherDashboard\obj\Debug\net10.0\staticwebassets.build.json.cache
+C:\Users\user\Downloads\1\WeatherDashboard\obj\Debug\net10.0\staticwebassets.development.json
+C:\Users\user\Downloads\1\WeatherDashboard\obj\Debug\net10.0\staticwebassets.build.endpoints.json
+C:\Users\user\Downloads\1\WeatherDashboard\obj\Debug\net10.0\swae.build.ex.cache
+C:\Users\user\Downloads\1\WeatherDashboard\obj\Debug\net10.0\WeatherDashboard.dll
+C:\Users\user\Downloads\1\WeatherDashboard\obj\Debug\net10.0\refint\WeatherDashboard.dll
+C:\Users\user\Downloads\1\WeatherDashboard\obj\Debug\net10.0\WeatherDashboard.pdb
+C:\Users\user\Downloads\1\WeatherDashboard\obj\Debug\net10.0\WeatherDashboard.genruntimeconfig.cache
+C:\Users\user\Downloads\1\WeatherDashboard\obj\Debug\net10.0\ref\WeatherDashboard.dll
 C:\FILES\ECU\#rd year 1 sem\Programming paradigam\weatherdashboard\WeatherDashboard\bin\Debug\net10.0\appsettings.Development.json
 C:\FILES\ECU\#rd year 1 sem\Programming paradigam\weatherdashboard\WeatherDashboard\bin\Debug\net10.0\appsettings.json
 C:\FILES\ECU\#rd year 1 sem\Programming paradigam\weatherdashboard\WeatherDashboard\bin\Debug\net10.0\WeatherDashboard.staticwebassets.endpoints.json
@@ -12,6 +40,7 @@ C:\FILES\ECU\#rd year 1 sem\Programming paradigam\weatherdashboard\WeatherDashbo
 C:\FILES\ECU\#rd year 1 sem\Programming paradigam\weatherdashboard\WeatherDashboard\obj\Debug\net10.0\WeatherDashboard.AssemblyInfo.cs
 C:\FILES\ECU\#rd year 1 sem\Programming paradigam\weatherdashboard\WeatherDashboard\obj\Debug\net10.0\WeatherDashboard.csproj.CoreCompileInputs.cache
 C:\FILES\ECU\#rd year 1 sem\Programming paradigam\weatherdashboard\WeatherDashboard\obj\Debug\net10.0\WeatherDashboard.MvcApplicationPartsAssemblyInfo.cache
+C:\FILES\ECU\#rd year 1 sem\Programming paradigam\weatherdashboard\WeatherDashboard\obj\Debug\net10.0\WeatherDashboard.sourcelink.json
 C:\FILES\ECU\#rd year 1 sem\Programming paradigam\weatherdashboard\WeatherDashboard\obj\Debug\net10.0\rjimswa.dswa.cache.json
 C:\FILES\ECU\#rd year 1 sem\Programming paradigam\weatherdashboard\WeatherDashboard\obj\Debug\net10.0\rjsmrazor.dswa.cache.json
 C:\FILES\ECU\#rd year 1 sem\Programming paradigam\weatherdashboard\WeatherDashboard\obj\Debug\net10.0\rjsmcshtml.dswa.cache.json
